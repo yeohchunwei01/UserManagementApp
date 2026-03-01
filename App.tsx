@@ -11,6 +11,8 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import { Text } from 'react-native';
+import './global.css';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -18,6 +20,7 @@ function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <Text className="text-red-500">For Testing Purpose</Text>
       <AppContent />
     </SafeAreaProvider>
   );
