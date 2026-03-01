@@ -2,3 +2,33 @@ module.exports = {
   root: true,
   extends: '@react-native',
 };
+module.exports = {
+  env: { node: true, es2021: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: { jsx: true },
+  },
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
+  root: true,
+  rules: {
+    'max-len': ['error', { code: 100 }],
+    'prettier/prettier': 'error',
+    'react/jsx-one-expression-per-line': [2, { allow: 'single-child' }],
+    'react/react-in-jsx-scope': 'off',
+    'react-hooks/rules-of-hooks': 'off',
+    semi: ['error', 'always'],
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-require-imports': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+  },
+  settings: { react: { version: 'detect' } },
+};
