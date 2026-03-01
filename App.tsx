@@ -13,6 +13,7 @@ import {
 } from 'react-native-safe-area-context';
 import { Text } from 'react-native';
 import './global.css';
+import { Testing } from '@/navigation';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -21,6 +22,7 @@ function App() {
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Text className="text-red-500">For Testing Purpose</Text>
+      <Testing />
       <AppContent />
     </SafeAreaProvider>
   );
