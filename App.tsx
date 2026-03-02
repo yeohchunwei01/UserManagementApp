@@ -7,7 +7,7 @@
 
 import { useEffect, useState } from 'react';
 import { useColorScheme, Alert, StatusBar } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ScreenLoading } from '@/components/atoms';
 import { User, UsersState, AuthContext } from '@/contexts';
@@ -81,11 +81,9 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <SafeAreaView className="flex-1">
-        <AuthContext.Provider value={{ ...usersState, login, logout, signup }}>
-          {isInitializing ? <ScreenLoading /> : <NavigationStack />}
-        </AuthContext.Provider>
-      </SafeAreaView>
+      <AuthContext.Provider value={{ ...usersState, login, logout, signup }}>
+        {isInitializing ? <ScreenLoading /> : <NavigationStack />}
+      </AuthContext.Provider>
     </SafeAreaProvider>
   );
 };

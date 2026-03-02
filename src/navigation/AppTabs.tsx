@@ -11,9 +11,7 @@ export const AppTabs = () => (
       name="Home"
       component={Screens.Home}
       options={{
-        tabBarIcon: ({ color, size }: { color: string; size: number }) => (
-          <FontAwesomeIcon color={color} name="home" size={size} />
-        ),
+        tabBarIcon: ({ color, size }) => <FontAwesomeIcon color={color} name="home" size={size} />,
       }}
     />
   </Tab.Navigator>
