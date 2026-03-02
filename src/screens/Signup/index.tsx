@@ -53,6 +53,7 @@ export const Signup = () => {
       <FormTextInput
         control={control}
         isRequired
+        isSecureTextEntryOption
         name="password"
         placeholder="Password"
         title="Password"
