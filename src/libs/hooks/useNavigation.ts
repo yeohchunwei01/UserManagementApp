@@ -8,8 +8,7 @@ import { AppTabsParamList, AuthStackParamList } from '@/navigation';
 
 export type AppTabsNavigationProp = BottomTabNavigationProp<AppTabsParamList>;
 
-export type AuthStackNavigationProp =
-  NativeStackNavigationProp<AuthStackParamList>;
+export type AuthStackNavigationProp = NativeStackNavigationProp<AuthStackParamList>;
 
 export type AppTabsNavigation = CompositeNavigationProp<
   AppTabsNavigationProp,

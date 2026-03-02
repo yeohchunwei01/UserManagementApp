@@ -8,12 +8,7 @@ interface ButtonProps {
   onPress?: () => void;
 }
 
-export const Button = ({
-  className,
-  isLoading,
-  title,
-  onPress,
-}: ButtonProps) => (
+export const Button = ({ className, isLoading, title, onPress }: ButtonProps) => (
   <Pressable
     className={cn(
       'bg-black py-4 rounded-md justify-center flex-row gap-2',
@@ -23,8 +18,6 @@ export const Button = ({
     onPress={onPress}
   >
     {isLoading && <ActivityIndicator />}
-    <Text className=" text-white text-base font-semibold text-center">
-      {title}
-    </Text>
+    <Text className=" text-white text-base font-semibold text-center">{title}</Text>
   </Pressable>
 );

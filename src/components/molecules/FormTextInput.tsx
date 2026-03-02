@@ -38,13 +38,8 @@ export const FormTextInput = <T extends FieldValues>({
   return (
     <View className="gap-0.5">
       <Label isRequired={isRequired} title={title} />
-      <TextInput
-        {...restProps}
-        {...(isController && { value, onChangeText: onChange })}
-      />
-      {error?.message && (
-        <Text className="text-red-600 text-base">{error.message}</Text>
-      )}
+      <TextInput {...restProps} {...(isController && { value, onChangeText: onChange })} />
+      {error?.message && <Text className="text-red-600 text-base">{error.message}</Text>}
     </View>
   );
 };

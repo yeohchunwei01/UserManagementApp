@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/atoms';
 import { FormTextInput } from '@/components/molecules';
-import { useUsersContext } from '@/contexts';
+import { useAuthContext } from '@/contexts';
 import { useNavigation } from '@/libs/hooks';
 
 interface FormValues {
@@ -14,7 +14,7 @@ interface FormValues {
 
 export const Login = () => {
   const navigate = useNavigation();
-  const { users, login } = useUsersContext();
+  const { users, login } = useAuthContext();
   const {
     control,
     formState: { isSubmitting },
@@ -60,17 +60,10 @@ export const Login = () => {
         placeholder="Password"
         title="Password"
       />
-      <Button
-        isLoading={isSubmitting}
-        title="Login"
-        onPress={handleSubmit(onPressSubmit)}
-      />
+      <Button isLoading={isSubmitting} title="Login" onPress={handleSubmit(onPressSubmit)} />
       <Text className="text-center text-base">
         Don&rsquo;t have an account yet?&nbsp;
-        <Text
-          className="text-blue-400"
-          onPress={() => navigate.replace('Signup')}
-        >
+        <Text className="text-blue-400" onPress={() => navigate.replace('Signup')}>
           Sign up now!
         </Text>
       </Text>

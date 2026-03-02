@@ -8,17 +8,8 @@ interface TextInputProps extends ComponentProps<typeof RNTextInput> {
   isSecureTextEntryOption?: boolean;
 }
 
-export const TextInput = ({
-  className,
-  isSecureTextEntryOption,
-  ...restProps
-}: TextInputProps) => (
-  <View
-    className={cn(
-      'border border-gray-300 rounded-lg px-3 py-4 bg-white',
-      className,
-    )}
-  >
+export const TextInput = ({ className, isSecureTextEntryOption, ...restProps }: TextInputProps) => (
+  <View className={cn('border border-gray-300 rounded-lg px-3 py-4 bg-white', className)}>
     <RNTextInput className="text-base leading-5" {...restProps} />
     {/* {isSecureTextEntryOption && <Ionicons name="search" size={24} color="gray" />} */}
   </View>

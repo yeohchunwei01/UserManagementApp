@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native';
 import { Button } from '@/components/atoms';
-import { useUsersContext } from '@/contexts';
+import { useAuthContext } from '@/contexts';
 
 export const Home = () => {
-  const { user, logout } = useUsersContext();
+  const { user, logout } = useAuthContext();
 
   return (
     <View className="flex-1 justify-center gap-2 px-4 py-6">

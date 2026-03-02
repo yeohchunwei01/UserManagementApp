@@ -1,1 +1,1 @@
-export * from './useUsersContext';
+export * from './useAuthContext';

@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useUsersContext } from '@/contexts';
+import { useAuthContext } from '@/contexts';
 import { AuthStack } from './AuthStack';
 import { AppTabs } from './AppTabs';
 import { RootStackParamList } from './types';
@@ -8,7 +8,7 @@ import { RootStackParamList } from './types';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const RootStack = () => {
-  const { user } = useUsersContext();
+  const { user } = useAuthContext();
 
   return (
     <NavigationContainer>

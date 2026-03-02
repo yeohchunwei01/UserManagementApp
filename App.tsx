@@ -8,7 +8,7 @@
 import { useState } from 'react';
 import { useColorScheme, StatusBar } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { User, UsersState, UsersContext } from '@/contexts';
+import { User, UsersState, AuthContext } from '@/contexts';
 import { RootStack as NavigationStack } from '@/navigation';
 import './global.css';
 
@@ -38,9 +38,9 @@ const App = () => {
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <SafeAreaView className="flex-1">
-        <UsersContext.Provider value={{ ...usersState, login, logout, signup }}>
+        <AuthContext.Provider value={{ ...usersState, login, logout, signup }}>
           <NavigationStack />
-        </UsersContext.Provider>
+        </AuthContext.Provider>
       </SafeAreaView>
     </SafeAreaProvider>
   );
