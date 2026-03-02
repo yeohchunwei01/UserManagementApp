@@ -6,6 +6,7 @@
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "useUnknownInCatchVariables": false,
     "types": ["jest"],
     "baseUrl": ".",
     "paths": {

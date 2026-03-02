@@ -1,0 +1,3 @@
+export const ASYNC_STORAGE_USERS_KEY = 'USERS';
+
+export const ASYNC_STORAGE_USER_ID_KEY = 'USER_ID';
